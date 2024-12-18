@@ -1,0 +1,99 @@
+#:include components/topbar.kv
+<Home@MDScreen>:
+
+    BoxLayout:
+        id: home_layout
+        orientation: 'vertical'
+        padding: dp(5)
+
+        TopBar:  
+            size_hint_y: None  
+            height: dp(70)  
+            
+        MDScrollView:
+    
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                adaptive_height: True
+
+                MDCard:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    spacing: dp(10)
+                    elevation: 1
+                    adaptive_height: True
+                    md_bg_color: app.theme_cls.accent_color
+
+                    
+                    MDLabel:
+                        text: "Grandes conquistas financeiras começam com pequenas decisões de economia."
+                        size_hint_y: None
+                        font_name: "MPoppins"
+                        font_size: "14sp"
+                        halign: 'center'
+                        adaptive_height: True
+                        padding: dp(10)
+                        
+
+
+                MDCard:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    adaptive_height: True
+
+                    FitImage:
+                        source: "assets/images/imag_pig.png"
+                        size_hint: (None, None)
+                        width: dp(90)
+                        height: dp(90)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        radius: [15, 15, 15, 15]
+
+                MDCard:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    adaptive_height: True
+                    padding: dp(10)
+                    
+                    md_bg_color: app.theme_cls.accent_color
+                    elevation: 1
+
+                    MDFloatLayout:
+                        size_hint_y: None
+                        adaptive_height: True
+                        padding: dp(10)
+                        MDLabel:
+                            text: 'Comece a sua jornada e assuma o controle'
+                            font_name: "MPoppins"
+                            pos_hint:{'center_x': .5, 'center_y': .7}
+                            halign: 'center'
+
+                        MDRaisedButton:
+                            text: 'Iniciar!'
+                            pos_hint: {'center_x': .5, 'center_y': .2}
+                            on_release: app.dialog_manager.show_dialog_despesa()
+
+
+<LayoutDespesaDialog>:
+    orientation: "vertical"
+    padding: "24dp"
+    spacing: "20dp"
+    adaptive_height: True
+    
+    
+    MDTextField:
+        id: value_input
+        hint_text: "Valor da despesa"
+        input_filter: "float" 
+    
+    MDRaisedButton:
+        id: date_label
+        text: "Selecionar Data"
+        pos_hint: {"center_x": 0.5}
+        on_release: root.show_date_picker()
+
+   
+            

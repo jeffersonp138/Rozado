@@ -1,0 +1,13 @@
+<Screen1@MDScreen>:
+    name: "screen1"
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: "Screen 1"
+            halign: "center"
+
+        MDRaisedButton:
+            text: "Go to Screen 2"
+            pos_hint: {"center_x": 0.5}
+            on_release: app.root.current = "screen2"

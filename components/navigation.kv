@@ -1,0 +1,37 @@
+<Navi@MDBottomNavigation>:
+    MDBottomNavigationItem:
+        name: 'screen 1'
+        text: 'Screen 1'
+        icon: 'home'
+        MDBoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Conteúdo da Tela 1'
+            MDNavigationDrawer:
+                id: nav_drawer
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Item 1'
+                            IconLeftWidget:
+                                icon: 'star'
+
+                        OneLineIconListItem:
+                            text: 'Item 2'
+                            IconLeftWidget:
+                                icon: 'star'
+
+                        OneLineIconListItem:
+                            text: 'Item 3'
+                            IconLeftWidget:
+                                icon: 'star'
+
+    MDBottomNavigationItem:
+        name: 'screen 2'
+        text: 'Screen 2'
+        icon: 'settings'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Conteúdo da Tela 2'

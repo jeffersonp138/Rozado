@@ -1,0 +1,25 @@
+#:include screen/home.kv
+#:include screen/screen1.kv
+#:include screen/screen2.kv
+
+
+MDScreen:
+    ###  Navegação da parte inferior da tela  ###
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: 'home'
+            text: 'Home'
+            icon: 'home'
+            Home:
+            
+        MDBottomNavigationItem:
+            name: 'grafico'
+            text: 'Gráficos'
+            icon: 'chart-line'
+            Screen1:
+
+        MDBottomNavigationItem:
+            name: 'dicas'
+            text: 'Dicas'
+            icon: 'pig'
+            Screen2:
